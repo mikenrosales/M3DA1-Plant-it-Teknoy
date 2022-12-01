@@ -1,1 +1,1 @@
-web: gunicorn plan-it-teknoy.wsgi
+web: gunicorn Plan_It_Teknoy.wsgi
