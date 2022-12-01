@@ -1,1 +1,1 @@
-web: gunicorn Plan_It_Teknoy.wsgi
+web: gunicorn team_m3da1_project.wsgi
