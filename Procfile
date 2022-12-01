@@ -1,1 +1,1 @@
-web: gunicorn team_m3da1_project.wsgi --preload
+web: gunicorn team_m3da1_project.wsgi --preload --timeout 10
