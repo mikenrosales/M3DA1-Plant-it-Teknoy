@@ -320,7 +320,7 @@ class DocGenView(View):
 		completed_events = Event.objects.get_completed_events(StudentID=current_student.StudentID)
 		
 		# accessing all student records in the database
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 		
 		#document table
 		docs = DocumentGen.objects.all()
@@ -741,7 +741,7 @@ class CalendarViewNew(View):
 
 
 		#accessing all student records in the database
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level, profile_pic FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level, profile_pic FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 		
 		student_running_events = []
 
@@ -807,7 +807,7 @@ class DashboardView(View):
 		completed_events = Event.objects.get_completed_events(StudentID=current_student.StudentID)
 		
 		# accessing all student records in the database
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 		
 		context = {
 					"current_user": current_user,
@@ -856,7 +856,7 @@ class AllEventsListView(ListView):
 
 
 
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 
 		context = {
 			"student_record" : student_record, 
@@ -905,7 +905,7 @@ class RunningEventsListView(ListView):
 		# 		notify.send(sender,recipient=receiver,verb='Event Running',description=message, timestamp = dt_string)
 		# 		i += 1
 		
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 		
 		context = {
 			"student_record" : student_record, 
@@ -932,7 +932,7 @@ class CompletedEventsListView(ListView):
 		check_teacher = Teachers.objects.filter(TeacherID=current_user)
 		check_student = Students.objects.filter(StudentID=current_user)
 
-		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM plan_it_teknoy_students WHERE StudentID_id = %s', [current_student.StudentID])
+		student_record = Students.objects.raw('SELECT StudentID_id, first_name, program, last_name, year_level FROM "Plan_it_teknoy_students" WHERE StudentID_id = %s', [current_student.StudentID])
 		
 		context = {
 			"student_record" : student_record, 
