@@ -110,29 +110,10 @@
         <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
         <aside class="app-sidebar">
             <div class="app-sidebar__user">
-                    <!-- {% for student_records in student_record %}
-                        {% if student_records.profile_pic.url in student_records.profile_pic.url %}
-                        <img class="app-sidebar__user-avatar" src="{{student_records.profile_pic.url}}" alt="User Image" height="50px" width="50px"/>            
-                        {% else %}
-                        <img class="app-sidebar__user-avatar" src="{% static 'images/default.png' %}" alt="User Image" height="50px" width="50px"/>
-                        {% endif %} -->
                         <img class="app-sidebar__user-avatar" src="{% static 'images/default.png' %}" alt="User Image" height="50px" width="50px"/>
                 <div>
-                    <!-- User Name -->
-                        <!-- <p class="app-sidebar__user-name">{{student_records.first_name}} {{student_records.last_name}}</p>
-                        {% if student_records.year_level == 1 %}
-                        <p class="app-sidebar__user-designation">{{student_records.program}} - {{student_records.year_level}}</p>
-                        {% elif student_records.year_level == 2 %}
-                        <p class="app-sidebar__user-designation">{{student_records.program}} - {{student_records.year_level}}</p>
-                        {% elif student_records.year_level == 3 %}
-                        <p class="app-sidebar__user-designation">{{student_records.program}} - {{student_records.year_level}}</p>
-                        {% else %}
-                        <p class="app-sidebar__user-designation">{{student_records.program}} - {{student_records.year_level}}</p>
-                        {% endif %}
-                    {% endfor %} -->
 
                         <!-- Full Name and Avatar from ms account -->
-                        <img class="app-sidebar__user-avatar" src="{% static 'images/default.png' %}" alt="User Image" height="50px" width="50px"/>
                         <p class="app-sidebar__user-name">{{name}}</p>
                 </div>
             </div>
