@@ -90,16 +90,27 @@ WSGI_APPLICATION = 'team_m3da1_project.wsgi.application'
 #   }
 
 # Postre DB Migration
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'hr9Y9SnETi6cYWjusiyZ',
+#         'HOST': 'containers-us-west-81.railway.app',
+#         'PORT': '5659',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'hr9Y9SnETi6cYWjusiyZ',
-        'HOST': 'containers-us-west-81.railway.app',
-        'PORT': '5659',
+        'NAME': os.environ['DBNAME'],
+        'HOST': os.environ['DBHOST'],
+        'USER': os.environ['DBUSER'],
+        'PASSWORD': os.environ['DBPASS'] 
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
